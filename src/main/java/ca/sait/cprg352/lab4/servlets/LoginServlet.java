@@ -46,9 +46,17 @@ public class LoginServlet extends HttpServlet
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException 
     {
-        String userName = request.getParamter("userName");
+        String username = request.getParamter("username");
         String password = request.getParamter("password");
 
+        if(username == null || username.isEmpty() || password == null || password.isEmpty())
+        {
+            request.setAttribute("message", "Username or password is missing.");
+        }
+        else
+        {
+
+        }
         getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
 
