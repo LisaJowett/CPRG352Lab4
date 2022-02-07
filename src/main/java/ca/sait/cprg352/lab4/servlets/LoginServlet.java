@@ -44,6 +44,8 @@ public class LoginServlet extends HttpServlet
             return;
         }
 
+        }
+
         getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
 
